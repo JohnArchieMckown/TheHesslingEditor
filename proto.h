@@ -30,7 +30,7 @@
  */
 
 /*
-$Id: proto.h,v 1.60 2013/07/10 02:08:25 mark Exp $
+$Id: proto.h,v 1.62 2014/10/29 21:01:25 mark Exp $
 */
 
                                                          /* commutil.c */
@@ -161,7 +161,7 @@ short execute_dialog Args((CHARTYPE *,CHARTYPE *,CHARTYPE *,bool,short,short,CHA
 short prepare_popup Args((CHARTYPE *));
 short execute_popup Args((int, int, int, int , int , int , int , int , CHARTYPE **, int));
 short execute_preserve Args((VIEW_DETAILS *, PRESERVED_VIEW_DETAILS **, FILE_DETAILS *, PRESERVED_FILE_DETAILS **));
-short execute_restore Args((VIEW_DETAILS *, PRESERVED_VIEW_DETAILS **, FILE_DETAILS *, PRESERVED_FILE_DETAILS **));
+short execute_restore Args((VIEW_DETAILS *, PRESERVED_VIEW_DETAILS **, FILE_DETAILS *, PRESERVED_FILE_DETAILS **, bool));
                                                           /* default.c */
 void set_global_defaults Args((void));
 void set_global_look_defaults Args((void));
@@ -180,7 +180,7 @@ short set_KEDIT_key_defaults Args((int,int));
 short construct_default_parsers Args((void));
 short destroy_all_parsers Args((void));
 short construct_default_parser_mapping Args((void));
-CHARTYPE *find_default_parser Args((CHARTYPE *,CHARTYPE *));
+CHARTYPE *find_default_parser Args((CHARTYPE *));
                                                              /* edit.c */
 void editor Args((void));
 int process_key Args((int,bool));

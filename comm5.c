@@ -102,7 +102,7 @@ DESCRIPTION
      The TABFILE makes the file pointed to by the mouse in the FILETABS
      window the current file.
 
-     If run from the command line, without a paramter, the leftmost file
+     If run from the command line, without a parameter, the leftmost file
      displayed in the FILETABS window will be made the current file.
 
 
@@ -1250,7 +1250,7 @@ DESCRIPTION
      With no arguments, the previous command entered on the command
      line is retrieved.
 
-     With multiple, concatenated ?s as argument, the pervious command
+     With multiple, concatenated ?s as argument, the previous command
      entered on the command line is retrieved corresponding to the
      number of ?s entered.
 

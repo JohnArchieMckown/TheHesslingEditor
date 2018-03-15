@@ -1082,7 +1082,7 @@ case "$target" in
       LD_RXTRANSLIB1="$LD_RXLIB1"
       ;;
    *linux*|*kfreebsd*-gnu*)
-      LD_RXLIB1="${CC} -shared  ${LDFLAGS} -Wl,-soname,\$(@)"
+      LD_RXLIB1="${CC} -shared  ${LDFLAGS} -Wl,-soname,\$(SONAME)"
       LD_RXTRANSLIB1="$LD_RXLIB1"
       CAN_USE_ABI="yes"
       if test "$USE_ABI" = "yes"; then

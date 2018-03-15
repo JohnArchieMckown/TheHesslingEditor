@@ -292,7 +292,7 @@ DESCRIPTION
 
 COMPATIBILITY
      XEDIT: N/A
-     KEDIT: Comaptible.
+     KEDIT: Compatible.
 
 SEE ALSO
      <SOS TOPEDGE>
@@ -1096,7 +1096,7 @@ CHARTYPE *params;
    {
       /*
        * We have a symbolic link.  Get the "real" file if there is one
-       * ie. the string AFTER "->" is the "real" file name.
+       * i.e. the string AFTER "->" is the "real" file name.
        */
       lname = (CHARTYPE*)strstr((DEFCHAR*)fname," -> ");
       if (lname != NULL)
@@ -1140,7 +1140,17 @@ CHARTYPE *params;
    rc = EditFile( edit_fname, FALSE );
    if ( dir )
    {
-      execute_restore( CURRENT_VIEW, &preserved_view_details, CURRENT_FILE, &preserved_file_details );
+      execute_restore( CURRENT_VIEW, &preserved_view_details, CURRENT_FILE, &preserved_file_details, FALSE );
+      /*
+       * Reset DISPLAY as we don't keep the settings
+       */
+      CURRENT_VIEW->display_low = 0;
+      CURRENT_VIEW->display_high = 0;
+      CURRENT_VIEW->scope_all = TRUE;
+
+      build_screen( current_screen );
+      display_screen( current_screen );
+      display_cmdline( current_screen, CURRENT_VIEW );
    }
    pre_process_line(CURRENT_VIEW,CURRENT_VIEW->focus_line,(LINE *)NULL);
    TRACE_RETURN();
@@ -2919,7 +2929,7 @@ DESCRIPTION
 
 COMPATIBILITY
      XEDIT: N/A
-     KEDIT: Comaptible.
+     KEDIT: Compatible.
 
 SEE ALSO
      <SOS BOTTOMEDGE>

@@ -142,6 +142,7 @@ int *type;
       if ( scurr->highlight_type[i] == THE_SYNTAX_NONE
       ||   scurr->highlight_type[i] == THE_SYNTAX_INCOMPLETESTRING
       ||   scurr->highlight_type[i] == THE_SYNTAX_COMMENT
+      ||   scurr->highlight_type[i] == THE_SYNTAX_POSTCOMPARE
       ||   scurr->highlight_type[i] == THE_SYNTAX_MARKUP )
       {
          /* if the current syntax setting for the current character is NOT set, then we can test for a comment... */
@@ -1400,7 +1401,7 @@ SHOW_LINE *scurr;
          /*
           * firstnonblank
           * the first word on the line must end with the specified
-          * delimiter. eg.
+          * delimiter. e.g.
           *     label::
           *     -------  is the valid label if '::' is the delimiter
           *     junk label::

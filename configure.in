@@ -226,6 +226,7 @@ if test "$with_xcurses" = yes; then
    if test "$enable_utf8" = yes; then
       WIDE_CHAR="-DUSE_UTF8 -DUSE_WIDE_CHAR -DPDC_WIDE -DPDC_FORCE_UTF8"
       THETYPE="X11w"
+      THEBIN="xwthe"
    fi
 fi
 if test "$with_xcurses_static" = yes; then
@@ -246,9 +247,14 @@ if test "$with_pdcurses" = yes; then
    curs_count=$curs_count+1
 fi
 if test "$with_dwindows" = yes; then
-   THEBIN="wthe"
+   THEBIN="dwthe"
    THETYPE="dwindows"
    curs_count=$curs_count+1
+   if test "$enable_utf8" = yes; then
+      WIDE_CHAR="-DUSE_UTF8 -DUSE_WIDE_CHAR -DPDC_WIDE -DPDC_FORCE_UTF8"
+      THETYPE="dwindowsw"
+      THEBIN="dwwthe"
+   fi
 fi
 if test "$with_extcurses" = yes; then
    curs_count=$curs_count+1
@@ -384,7 +390,7 @@ AC_FUNC_MEMCMP
 AC_FUNC_ALLOCA
 AC_TYPE_SIGNAL
 MH_FUNC_ACL_GET
-MH_CHECK_FUNCS(rename lstat readlink getacl chown strcasecmp strcmpi stricmp mkfifo select siginterrupt setlocale realpath)
+MH_CHECK_FUNCS(rename lstat readlink getacl chown strcasecmp strcmpi stricmp mkfifo select siginterrupt setlocale realpath fork)
 
 if test "$checkcurses" = "yes"; then
    MH_CHECK_CHTYPE

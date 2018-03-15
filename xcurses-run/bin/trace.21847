@@ -1,0 +1,66 @@
+execve("/home/tsh009/source-oem/TheHesslingEditor/xcurses-run/bin/the", ["the"], [/* 76 vars */]) = 0
+brk(0)                                  = 0xacc000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd0c100c000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=399551, ...}) = 0
+mmap(NULL, 399551, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fd0c0faa000
+close(3)                                = 0
+open("/usr/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@`\0\0360\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=144224, ...}) = 0
+mmap(0x301e000000, 2208944, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x301e000000
+mprotect(0x301e017000, 2093056, PROT_NONE) = 0
+mmap(0x301e216000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x301e216000
+mmap(0x301e218000, 13488, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x301e218000
+close(3)                                = 0
+open("/usr/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0PU\200\0350\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1167976, ...}) = 0
+mmap(0x301d800000, 3174680, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x301d800000
+mprotect(0x301d907000, 2093056, PROT_NONE) = 0
+mmap(0x301db06000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x106000) = 0x301db06000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd0c0fa9000
+open("/usr/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \10B\0350\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=2100864, ...}) = 0
+mmap(0x301d400000, 3930656, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x301d400000
+mprotect(0x301d5b7000, 2093056, PROT_NONE) = 0
+mmap(0x301d7b6000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b6000) = 0x301d7b6000
+mmap(0x301d7bc000, 14880, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x301d7bc000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd0c0fa8000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd0c0fa7000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fd0c0fa6000
+arch_prctl(ARCH_SET_FS, 0x7fd0c0fa7700) = 0
+mprotect(0x301d7b6000, 16384, PROT_READ) = 0
+mprotect(0x301db06000, 4096, PROT_READ) = 0
+mprotect(0x301e216000, 4096, PROT_READ) = 0
+mprotect(0x602000, 4096, PROT_READ)     = 0
+mprotect(0x301d220000, 4096, PROT_READ) = 0
+munmap(0x7fd0c0faa000, 399551)          = 0
+set_tid_address(0x7fd0c0fa79d0)         = 21847
+set_robust_list(0x7fd0c0fa79e0, 24)     = 0
+rt_sigaction(SIGRTMIN, {0x301e005b20, [], SA_RESTORER|SA_SIGINFO, 0x301e010430}, NULL, 8) = 0
+rt_sigaction(SIGRT_1, {0x301e005bb0, [], SA_RESTORER|SA_RESTART|SA_SIGINFO, 0x301e010430}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+getrlimit(RLIMIT_STACK, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+readlink("/proc/self/exe", "/home/tsh009/source-oem/TheHessl"..., 1024) = 61
+brk(0)                                  = 0xacc000
+brk(0xaed000)                           = 0xaed000
+brk(0)                                  = 0xaed000
+lstat("/home", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/home/tsh009", {st_mode=S_IFDIR|0700, st_size=12288, ...}) = 0
+lstat("/home/tsh009/source-oem", {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+lstat("/home/tsh009/source-oem/TheHesslingEditor", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/home/tsh009/source-oem/TheHesslingEditor/xcurses-run", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/home/tsh009/source-oem/TheHesslingEditor/xcurses-run/bin", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+lstat("/home/tsh009/source-oem/TheHesslingEditor/xcurses-run/bin/the", {st_mode=S_IFREG|0755, st_size=18928, ...}) = 0
+access("/home/tsh009/.thegui", F_OK)    = -1 ENOENT (No such file or directory)
+access("/home/tsh009/.theconsole", F_OK) = -1 ENOENT (No such file or directory)
+access("/home/tsh009/source-oem/TheHesslingEditor/xcurses-run/bin/xthe", X_OK) = -1 ENOENT (No such file or directory)
+access("/home/tsh009/source-oem/TheHesslingEditor/xcurses-run/bin/nthe", X_OK) = -1 ENOENT (No such file or directory)
+write(2, "Cannot find any THE binary to ru"..., 46) = 46
+exit_group(1)                           = ?
++++ exited with 1 +++

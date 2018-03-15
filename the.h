@@ -30,7 +30,7 @@
  */
 
 /*
-$Id: the.h,v 1.80 2013/07/10 02:07:24 mark Exp $
+$Id: the.h,v 1.81 2013/11/08 06:48:26 mark Exp $
 */
 
 #include "thedefs.h"
@@ -562,8 +562,8 @@ extern void ClosedownConsole( void );
 
 #ifndef A_NORMAL
 /* Various video attributes */
-# define A_STANDOUT      BSD_STANDOUT /* for compatability with BSD curses */
-# define A_REVERSE       BSD_STANDOUT /* for compatability with BSD curses */
+# define A_STANDOUT      BSD_STANDOUT /* for compatibility with BSD curses */
+# define A_REVERSE       BSD_STANDOUT /* for compatibility with BSD curses */
 # define A_UNDERLINE     0
 # define A_BLINK         0
 # define A_DIM           0
@@ -583,8 +583,8 @@ extern void ClosedownConsole( void );
 #ifndef A_NORMAL
 /* Various video attributes */
 # ifdef HAVE_BSD_CURSES
-#  define A_STANDOUT      BSD_STANDOUT /* for compatability with BSD curses */
-#  define A_REVERSE       BSD_STANDOUT /* for compatability with BSD curses */
+#  define A_STANDOUT      BSD_STANDOUT /* for compatibility with BSD curses */
+#  define A_REVERSE       BSD_STANDOUT /* for compatibility with BSD curses */
 #  define A_UNDERLINE     0
 #  define A_BLINK         0
 #  define A_DIM           0

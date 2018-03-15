@@ -3687,7 +3687,7 @@ CHARTYPE *stemname;
    }
    /*
     * Defining these constants this way is done because non-ansi compilers
-    * can't handle defintions like int a[2] = {0,1};
+    * can't handle definitions like int a[2] = {0,1};
     */
    button_len[0] = 2; button_text[0] = "ok";button_num[0] = 1;
    button_len[1] = 8; button_text[1] = "okcancel";button_num[1] = 2;
@@ -5814,18 +5814,18 @@ FILE_DETAILS *src_fd;
 
 /***********************************************************************/
 #ifdef HAVE_PROTO
-short execute_restore(VIEW_DETAILS *dst_vd, PRESERVED_VIEW_DETAILS **preserved_view_details, FILE_DETAILS *dst_fd, PRESERVED_FILE_DETAILS **preserved_file_details)
+short execute_restore(VIEW_DETAILS *dst_vd, PRESERVED_VIEW_DETAILS **preserved_view_details, FILE_DETAILS *dst_fd, PRESERVED_FILE_DETAILS **preserved_file_details, bool rebuild_screen)
 #else
-short execute_restore(dst_vd, preserved_view_details, dst_fd, preserved_file_details)
+short execute_restore(dst_vd, preserved_view_details, dst_fd, preserved_file_details,rebuild_screen)
 PRESERVED_VIEW_DETAILS **preserved_view_details;
 PRESERVED_FILE_DETAILS **preserved_file_details;
 VIEW_DETAILS *dst_vd;
 FILE_DETAILS *dst_fd;
+bool rebuild_screen;
 #endif
 /***********************************************************************/
 {
    short rc=RC_OK;
-   bool rebuild_screen=FALSE;
 
    TRACE_FUNCTION( "execute.c: execute_restore" );
    /*
@@ -5837,20 +5837,6 @@ FILE_DETAILS *dst_fd;
       TRACE_RETURN();
       return( RC_INVALID_OPERAND );
    }
-   /*
-    * Before putting the settings back, we have to do some special things
-    * with PREFIX, ARROW, CMDLINE, ID_LINE, ...
-    * Lets do this for everything!!
-    */
-#if 0
-   if ( dst_vd->prefix != (*preserved_view_details)->prefix
-   ||   dst_vd->prefix_width != (*preserved_view_details)->prefix_width
-   ||   dst_vd->prefix_gap != (*preserved_view_details)->prefix_gap
-   ||   dst_vd->arrow_on != (*preserved_view_details)->arrow_on
-   ||   dst_vd->cmd_line != (*preserved_view_details)->cmd_line
-   ||   dst_vd->id_line != (*preserved_view_details)->id_line)
-#endif
-      rebuild_screen = TRUE;
    /*
     * Restore the VIEW details...
     */

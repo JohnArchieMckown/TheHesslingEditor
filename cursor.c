@@ -290,7 +290,7 @@ bool kedit_defaults;
     */
    TRACE_FUNCTION("cursor.c:  THEcursor_left");
    /*
-    * The following should be a temporary fix for KEDIT compatability...
+    * The following should be a temporary fix for KEDIT compatibility...
     */
    if (CURRENT_VIEW->prefix
    &&  kedit_defaults)
@@ -415,7 +415,7 @@ bool kedit_defaults;
 
    TRACE_FUNCTION("cursor.c:  THEcursor_right");
    /*
-    * The following should be a temporary fix for KEDIT compatability...
+    * The following should be a temporary fix for KEDIT compatibility...
     */
    if (CURRENT_VIEW->prefix
    &&  kedit_defaults)

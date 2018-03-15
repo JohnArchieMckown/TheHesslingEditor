@@ -1090,7 +1090,7 @@ MONITOR
      monitor.2       - COLOR|MONO
 
 MOUSE
-     Indicates if the mouse is suppoted as an input device. Set by
+     Indicates if the mouse is supported as an input device. Set by
      <SET MOUSE>.
      (QEMS)
 
@@ -1277,7 +1277,7 @@ PROFile
      profile.1       - profile file name of blank if none being used
 
 READONLY
-     Indicates if the file being edited is allowed to be alterered.
+     Indicates if the file being edited is allowed to be altered.
      Set by <SET READONLY>.
      (QEMS)
 
@@ -1468,7 +1468,7 @@ STATOPT [*|option]
      Displays the current status options in effect on the <status line>.
      Set by <SET STATOPT>
 
-     With the ['*'] option, (or no option), returns setings
+     With the ['*'] option, (or no option), returns settings
      for all options that are in effect. The returned settings are
      the same as the arguments specified in the <SET STATOPT> command.
      (QE)
@@ -1704,9 +1704,9 @@ VERSION
 
      version.0       - 5
      version.1       - THE
-     version.2       - version string eg. 1.5
+     version.2       - version string e.g. 1.5
      version.3       - platform version (DOS,OS2,UNIX,X11,WIN32,...)
-     version.4       - version status information eg. release date, beta
+     version.4       - version status information e.g. release date, beta
      version.5       - platform kernel (DOS,OS2,Linux,WIN32,...)
 
 Width
@@ -1763,7 +1763,7 @@ IMPLIED EXTRACT
      The above <REXX> variables set by the <EXTRACT> command may also
      be obtained by a REXX macro as an implied EXTRACT. Each variable
      above that may be set by an explicit EXTRACT command may also be
-     eg. The REXX commands:
+     e.g. The REXX commands:
 
          'EXTRACT /SIZE/CURLINE/'
          Say size.1 curline.1
@@ -1791,7 +1791,7 @@ altkey()
 
 alt()
      Returns '1' if the file being edited has changed since the
-     last SAVE. ie. if the value of alt.2 is non zero.
+     last SAVE. i.e. if the value of alt.2 is non zero.
 
 blank()
      Returns '1' if the line the <cursor field> is completely blank.
@@ -1869,7 +1869,7 @@ leftedge()
 
 modifiable()
      Returns '1' if the cursor is located in an area that can be changed.
-     ie. not on <Top-of-File line> or <Bottom-of-File line> nor on a
+     i.e. not on <Top-of-File line> or <Bottom-of-File line> nor on a
      <shadow line>.
 
 rightedge()
@@ -1917,7 +1917,7 @@ valid_target(target[,anything])
 
      If a valid target, returns the first line affected by the target
      followed by the number of lines to the target, and optionally the
-     remainder of the argument. eg.
+     remainder of the argument. e.g.
 
      if the focus line is 12 and valid_target() is called as
 
@@ -1961,7 +1961,7 @@ run_os(command[,stdin_stem[,stdout_stem[,stderr_stem]]])
 
      all other numbers, return code from operating system command
 
-     eg. to spell check the words "The Hessling Editr" with ispell
+     e.g. to spell check the words "The Hessling Editr" with ispell
 
          in.0 = 3
          in.1 = "The"

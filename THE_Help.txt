@@ -846,27 +846,27 @@
  | Target Type      | Description                                               |
  +------------------+-----------------------------------------------------------|
  |Absolute target   | An absolute line number.                                  |
- |                  | eg. :12 = line number 12                                  |
+ |                  | e.g. :12 = line number 12                                  |
  |All target        | All lines in the file.                                    |
- |                  | eg. ALL                                                   |
+ |                  | e.g. ALL                                                   |
  |Blank target      | The first line containing only blank characters.          |
- |                  | eg. BLANK                                                 |
+ |                  | e.g. BLANK                                                 |
  |Block target      | All lines in the marked block.                            |
- |                  | eg. BLOCK                                                 |
+ |                  | e.g. BLOCK                                                 |
  |Named line target | A line with a name, set with [SET] POINT                  |
- |                  | eg. .fred                                                 |
+ |                  | e.g. .fred                                                 |
  |Relative target   | A target relative to the focus line.                      |
- |                  | eg. 12 = 12 lines below the focus line                    |
+ |                  | e.g. 12 = 12 lines below the focus line                    |
  |                  |     -4 = 4 lines above the focus line                     |
  |                  |     *  = all lines below the focus line                   |
  |                  |     -* = all lines above the focus line                   |
  |String target     | A sequence of characters between delimiters.              |
- |                  | eg. /string/  - the first line below the                  |
+ |                  | e.g. /string/  - the first line below the                  |
  |                  |                 focus line containing "string"            |
  |                  |     -/string/ - the first line above the                  |
  |                  |                 focus line containing "string"            |
  |Line flag targets | Targets that reference line flags. See [SET] LINEFLAG     |
- |                  | eg. NEW - the first line added to the file below          |
+ |                  | e.g. NEW - the first line added to the file below          |
  |                  |     the focus line                                        |
  |                  |     CHAnged - the first changed in the file below         |
  |                  |     the focus line                                        |

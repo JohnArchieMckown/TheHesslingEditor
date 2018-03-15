@@ -1613,11 +1613,10 @@ short construct_default_parser_mapping()
 }
 /***********************************************************************/
 #ifdef HAVE_PROTO
-CHARTYPE *find_default_parser(CHARTYPE *name,CHARTYPE *tldname)
+CHARTYPE *find_default_parser(CHARTYPE *name)
 #else
-CHARTYPE *find_default_parser(name,tldname)
+CHARTYPE *find_default_parser(name)
 CHARTYPE *name;
-CHARTYPE *tldname;
 #endif
 /***********************************************************************/
 {
@@ -1625,7 +1624,6 @@ CHARTYPE *tldname;
    CHARTYPE *contents=NULL;
 
    TRACE_FUNCTION("default.c: find_default_parser");
-   tldname = NULL;
    for (i=0;;i++)
    {
       if (default_parsers[i].filename == NULL)
@@ -1633,7 +1631,6 @@ CHARTYPE *tldname;
       if (my_stricmp((DEFCHAR *)default_parsers[i].filename,(DEFCHAR *)name) == 0)
       {
          contents = default_parsers[i].contents;
-         tldname = default_parsers[i].filename;
          break;
       }
    }

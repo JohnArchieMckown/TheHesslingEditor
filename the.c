@@ -1113,9 +1113,9 @@ char *argv[];
 #endif
    curses_started = TRUE;
 
-#if defined(USE_WINGUICURSES)
+#if defined(USE_WINGUICURSES) || defined(USE_XCURSES)
    /*
-    * Tell PDCurses which key should be returned when the Windows close button is clicked
+    * Tell PDCurses which key should be returned when the window close button is clicked
     */
    PDC_set_function_key( FUNCTION_KEY_SHUT_DOWN, KEY_EXIT );
    PDC_set_function_key( FUNCTION_KEY_PASTE, 0 );
@@ -1123,6 +1123,8 @@ char *argv[];
     * ... and assign EXIT key to CANCEL
     */
    Define((CHARTYPE *)"EXIT cancel");
+#endif
+#if defined(USE_WINGUICURSES)
    /*
     * Setup drag and drop support
     */

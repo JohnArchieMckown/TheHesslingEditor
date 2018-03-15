@@ -1,5 +1,5 @@
 /*
-$Id: append.the,v 1.1 2001/01/04 09:39:49 mark Exp $
+$Id: append.the,v 1.2 2013/11/08 06:47:09 mark Exp $
 */
 /***********************************************************************/
 /* Description: REXX macro to append a string to a line.               */
@@ -9,13 +9,13 @@ $Id: append.the,v 1.1 2001/01/04 09:39:49 mark Exp $
 /*              Full XEDIT/KEDIT/THE targets are supported.            */
 /*              A single character delimits the beginning of the string*/
 /*              to be appended.                                        */
-/*              eg. append /fred/ | /bob/ xyz                          */
+/*              e.g. append /fred/ | /bob/ xyz                         */
 /*                                       ^ 1 space                     */
 /*                  will append 'xyz' to the end of each line          */
-/*              eg. append /fred/ | /bob/  xyz                         */
+/*              e.g. append /fred/ | /bob/  xyz                        */
 /*                                       ^^ 2 spaces                   */
 /*                  will append ' xyz' to the end of each line         */
-/*              eg. append /fred/ | /bob/xyz                           */
+/*              e.g. append /fred/ | /bob/xyz                          */
 /*                                      ^ no spaces                    */
 /*                  will append 'yz' to the end of each line           */
 /***********************************************************************/
@@ -62,6 +62,6 @@ Do nolines                              /* for each line to target ... */
    If rc \= 0 Then Leave                         /* shouldn't get here */
 End
 'EMSG' "'"||string||"'" 'appended to' totlines 'lines' /* say how many lines changed */
-If stay.1 = 'ON' Then ':'||current_line 
+If stay.1 = 'ON' Then ':'||current_line
 'restore'
 Return                                               /* go back to THE */

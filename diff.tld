@@ -6,9 +6,13 @@
 :case
   respect
 :header
-  line diff column 1 alt a
-  line --- column 1 alt a
-  line +++ column 1 alt a
-  line @@ column 1 alt c
-  line - column 1 alt b
-  line + column 1 alt d
+  line diff column 1 alt g
+  line Only column 1 alt p
+  line Binary column 1 alt p
+  line < column 1 alt d
+  line > column 1 alt o
+  line --- column 1 alt c
+:postcompare
+  class ^[0-9,]*d[0-9,]* alt w
+  class ^[0-9,]*a[0-9,]* alt a
+  class ^[0-9,]*c[0-9,]* alt b

@@ -188,7 +188,7 @@ SYNTAX
      ALL [rtarget]
 
 DESCRIPTION
-     The ALL command allows for the selective display, and editting
+     The ALL command allows for the selective display, and editing
      (subject to <SET SCOPE>) of lines that match the specified target.
      This target consists of any number of individual targets
      separated by '&' (logical and) or '|' (logical or).
@@ -1032,7 +1032,7 @@ DESCRIPTION
      The CINSERT command inserts 'text' starting at the column position.
 
      'text' can include leading or trailing space characters. Thus
-     CINSERT immediatley followed by 5 spaces, will insert 4 space
+     CINSERT immediately followed by 5 spaces, will insert 4 space
      characters. The first space character is the command separator.
 
 COMPATIBILITY

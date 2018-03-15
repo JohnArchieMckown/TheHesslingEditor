@@ -120,7 +120,7 @@ DEFINE *first_synonym=NULL;
 DEFINE *last_synonym=NULL;
 /*
  * The following two are to specify the first and last items in the
- * linked list for mouse button defintions.
+ * linked list for mouse button definitions.
  */
 DEFINE *first_mouse_define=NULL;
 DEFINE *last_mouse_define=NULL;

@@ -500,7 +500,17 @@ CHARTYPE *params;
    rc = EditFile( temp_cmd, FALSE );
    if ( dir )
    {
-      execute_restore( CURRENT_VIEW, &preserved_view_details, CURRENT_FILE, &preserved_file_details );
+      execute_restore( CURRENT_VIEW, &preserved_view_details, CURRENT_FILE, &preserved_file_details, FALSE );
+      /*
+       * Reset DISPLAY as we don't keep the settings
+       */
+      CURRENT_VIEW->display_low = 0;
+      CURRENT_VIEW->display_high = 0;
+      CURRENT_VIEW->scope_all = TRUE;
+
+      build_screen( current_screen );
+      display_screen( current_screen );
+      display_cmdline( current_screen, CURRENT_VIEW );
    }
 
    TRACE_RETURN();
@@ -1959,7 +1969,7 @@ SYNTAX
 DESCRIPTION
      The HELP command displays help for the editor.
      Uses THE_HELP_FILE environment variable to point to the help file.
-     See Appendix 1 for details on this and other environemnt variables.
+     See Appendix 1 for details on this and other environment variables.
 
 COMPATIBILITY
      XEDIT: Similar in concept.
@@ -2027,7 +2037,7 @@ DESCRIPTION
 
      Be very careful when using the HIT command with the <DEFINE> command.
      If you assign the HIT command to a key, DO NOT use the same key
-     name. eg. DEFINE F1 HIT F1
+     name. e.g. DEFINE F1 HIT F1
      This will result in an infinite processing loop.
 
 COMPATIBILITY

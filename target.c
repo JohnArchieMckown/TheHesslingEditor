@@ -69,7 +69,7 @@ int minlen;
 /***********************************************************************/
 /*
  * Return the length of ptr that matches from the minlen of type.
- * eg. chan, changed, 3 will result in 4
+ * e.g. chan, changed, 3 will result in 4
  * If no match, return 0
  */
 {
@@ -1639,7 +1639,7 @@ int search_semantics;
  * Finds a string (needle: in rt->string) in another string (haystack: in curr->line)
  * If SEARCHing backwards, we need to copy the string and reverse the needle and
  * the haystack.
- * eg.
+ * e.g.
  * SEARCH -/abc/
  * where curr->line = "1234abc56" and current column position is 9 (start_col is 0 based)
  * needle becomes: "cba"

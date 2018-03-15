@@ -1,4 +1,4 @@
-Version 3.3RC4 ??-??-2013
+Version 3.4RC4 30-10-2014
  --- Bug fixes:
      o Note all bug numbers now refer to new SF numbering.
      o Fix for bug 230 and 208: SET PREFIX with width propagates to all files
@@ -21,6 +21,8 @@ Version 3.3RC4 ??-??-2013
      o Default value for -k command line switch without an optional format number is 4
      o READV CMDLINE now allows the TAB key to be used to terminate the command. Also
        affects DIALOG command.
+     o On Linux and Unix platforms, xthe will now run detached from terminal window
+       if started from "the" binary
  --- New features:
      o Feature Request 37: Add SLK to EXTRACT/QUERY
      o Feature Request 54: Document new line flag targets (done in 3.3RC1)

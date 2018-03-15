@@ -52,7 +52,7 @@ DESCRIPTION
      The location of the popup menu is specified by the first parameter.
 
      'MOUSE' specifies that the top left corner of the popup menu is to
-     be displayed where the mouse cursor currenlty is displayed. This option
+     be displayed where the mouse cursor currently is displayed. This option
      is only valid if the popup window is initiated from a macro assigned to
      a mouse event.
 
@@ -804,9 +804,9 @@ DESCRIPTION
           readv.0 = 1
           readv.1 = contents of command line
 
-     While editting the command in READV 'Cmdline', any key redefinitions
+     While editing the command in READV 'Cmdline', any key redefinitions
      you have made will be in effect.  Therefore you can use your
-     "normal" editting keys to edit the line.  THE will allow the
+     "normal" editing keys to edit the line.  THE will allow the
      following commands to be executed while in READV 'Cmdline':
 
           <CURSOR> LEFT, <CURSOR> RIGHT, <CURSOR> DOWN, <CURSOR> UP,
@@ -952,7 +952,7 @@ SYNTAX
      RECORD stop_key filename
 
 DESCRIPTION
-     The RECORD command alows the user to record all keystrokes
+     The RECORD command allows the user to record all keystrokes
      from the time that RECORD is executed until the first time
      that the specified 'stop_key' is hit.  All commands associated
      with each keystroke are stored into the specified 'filename'
@@ -1217,7 +1217,7 @@ CHARTYPE *params;
       {
          free_view_memory(TRUE,TRUE);
          rc = EditFile( edit_fname, FALSE );
-         execute_restore( CURRENT_VIEW, &preserved_view_details, CURRENT_FILE, &preserved_file_details );
+         execute_restore( CURRENT_VIEW, &preserved_view_details, CURRENT_FILE, &preserved_file_details, FALSE );
          if ( current_line < CURRENT_FILE->number_lines )
             CURRENT_VIEW->current_line = current_line;
          else
@@ -1226,6 +1226,12 @@ CHARTYPE *params;
             CURRENT_VIEW->focus_line = focus_line;
          else
             CURRENT_VIEW->focus_line = CURRENT_FILE->number_lines;
+         /*
+          * Reset DISPLAY as we don't keep the settings
+          */
+         CURRENT_VIEW->display_low = 0;
+         CURRENT_VIEW->display_high = 0;
+         CURRENT_VIEW->scope_all = TRUE;
          pre_process_line( CURRENT_VIEW, CURRENT_VIEW->focus_line, (LINE *)NULL );
          build_screen( current_screen );
          display_screen( current_screen );
@@ -1693,7 +1699,7 @@ CHARTYPE *params;
       TRACE_RETURN();
       return( RC_INVALID_OPERAND );
    }
-   rc = execute_restore( CURRENT_VIEW, &CURRENT_VIEW->preserved_view_details, CURRENT_FILE, &CURRENT_FILE->preserved_file_details );
+   rc = execute_restore( CURRENT_VIEW, &CURRENT_VIEW->preserved_view_details, CURRENT_FILE, &CURRENT_FILE->preserved_file_details, TRUE );
    TRACE_RETURN();
    return(rc);
 }

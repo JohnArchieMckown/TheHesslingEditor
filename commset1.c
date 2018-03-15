@@ -795,7 +795,7 @@ DESCRIPTION
 
      Autoscrolling does not occur if the key pressed is assigned to
      <CURSOR> SCREEN LEFT or RIGHT, which is the case if <SET COMPAT> XEDIT
-     key defintions are active.
+     key definitions are active.
 
 COMPATIBILITY
      XEDIT: N/A
@@ -870,7 +870,7 @@ DESCRIPTION
      saved or filed.
 
      'KEEP' and 'ON' options are the same. 'ON' is
-     kept for compatability with previous versions of THE.
+     kept for compatibility with previous versions of THE.
 
      With 'OFF', the file being written to disk will replace an
      existing file. There is a chance that you will end up with neither
@@ -2096,7 +2096,7 @@ DESCRIPTION
      which default function key settings you require.
 
      Any of the parameters can be specified as =, which will not
-     change that aspect of THE's compatability.
+     change that aspect of THE's compatibility.
 
 COMPATIBILITY
      XEDIT: N/A
@@ -2610,7 +2610,7 @@ DESCRIPTION
      this sets the <current line> to be relative to the middle of
      the screen. A positive value adds to the middle line number,
      a negative subtracts from it.
-     eg. M+3 on a 24 line screen will be line 15
+     e.g. M+3 on a 24 line screen will be line 15
          M-5 on a 24 line screen will be line 7
 
      The second form of parameters is:
@@ -2619,7 +2619,7 @@ DESCRIPTION
      this sets the <current line> to be relative to the top of the
      screen (if positive or no sign) or relative to the bottom
      of the screen if negative.
-     eg. +3 or 3 will set current line to line 3
+     e.g. +3 or 3 will set current line to line 3
          -3 on a 24 line screen will be line 21
 
      If the resulting line is outside the bounds of the screen
@@ -3020,7 +3020,7 @@ DESCRIPTION
      displayed on subsequent DIRECTORY commands. The operand "*" will
      set the mask to all files, the other options will set the
      mask to include those options specified together with "normal"
-     files eg.
+     files e.g.
 
         DIRINCLUDE R S
 
@@ -3477,7 +3477,7 @@ SYNTAX
 
 DESCRIPTION
      The SET EQUIVChar command allows the user to change the character
-     that is used to specify eqivalence in command parameters.
+     that is used to specify equivalence in command parameters.
 
      In many THE commands, an equivalence character, usually '=', can
      be used as a parameter to default to values in the current file
@@ -3585,7 +3585,7 @@ DESCRIPTION
      be displayed with an alphabetic character representing the "control"
      code.
 
-     eg.
+     e.g.
      character code with a value of 7, will display as "G" in the colour
      specified by <SET COLOUR> NONDISP.
 
@@ -3601,7 +3601,7 @@ DESCRIPTION
 
      The 'character list' is a list of positive numbers between 0 and
      255 (inclusive).  The format of this character list can be either
-     a single number; eg. 124, or a range of numbers specified; eg.
+     a single number; e.g. 124, or a range of numbers specified; e.g.
      32-126. (The first number must be less than or equal to the second
      number).
 
@@ -3611,7 +3611,7 @@ DESCRIPTION
      representation (depending on the current font), and the
      characters between 0 and 31 inclusive, being displayed as
      an equivalent "control" character; characters between 128 and
-     159 inculsive and 250 to 255 being displayed with the <SET NONDISP>
+     159 inclusive and 250 to 255 being displayed with the <SET NONDISP>
      character.
 
      Up to 20 character specifiers (single number or range) can be
@@ -4923,7 +4923,7 @@ DESCRIPTION
      this sets the hexshow line to be relative to the middle of
      the screen. A positive value adds to the middle line number,
      a negative subtracts from it.
-     eg. M+3 on a 24 line screen will be line 15
+     e.g. M+3 on a 24 line screen will be line 15
          M-5 on a 24 line screen will be line 7
 
      The second form of parameters is:
@@ -4932,7 +4932,7 @@ DESCRIPTION
      this sets the hexshow line to be relative to the top of the
      screen (if positive or no sign) or relative to the bottom
      of the screen if negative.
-     eg. +3 or 3 will set current line to line 3
+     e.g. +3 or 3 will set current line to line 3
          -3 on a 24 line screen will be line 21
 
      If the resulting line is outside the bounds of the screen
@@ -5440,7 +5440,7 @@ DESCRIPTION
      The SET INTERFACE command changes the behaviour of several operations
      within THE.  THE normally operates in a block-mode manner, however
      many applications conform to the Common User Access (CUA) standard
-     developed by IBM.  This command specifies that CUA behaiour should
+     developed by IBM.  This command specifies that CUA behaviour should
      occur on various actions during the edit session.
 
      The major differences between CLASSIC and CUA behaviour involve
@@ -5505,7 +5505,7 @@ SYNTAX
      [SET] LASTOP operand text
 
 DESCRIPTION
-     The SET LASTOP command sets the valus of the specified 'operand' to the
+     The SET LASTOP command sets the values of the specified 'operand' to the
      'text' supplied. This command is most useful when run from a macro, to
      set the string to be passed to the next invocation of the equivalent
      'operand' command; eg LOCATE, FIND, etc.
@@ -6210,7 +6210,7 @@ CHARTYPE *params;
    }
    /*
     * Obtain current values for indent, in case they aren't changed by
-    * the current command. (ie. no third parameter)
+    * the current command. (i.e. no third parameter)
     */
    indent = CURRENT_VIEW->margin_indent;
    offset = CURRENT_VIEW->margin_indent_offset_status;
@@ -6377,7 +6377,7 @@ DESCRIPTION
      this sets the first line to be relative to the middle of
      the screen. A positive value adds to the middle line number,
      a negative subtracts from it.
-     eg. M+3 on a 24 line screen will be line 15
+     e.g. M+3 on a 24 line screen will be line 15
          M-5 on a 24 line screen will be line 7
 
      The second form of positional parameters is:
@@ -6386,7 +6386,7 @@ DESCRIPTION
      this sets the first line to be relative to the top of the
      screen (if positive or no sign) or relative to the bottom
      of the screen if negative.
-     eg. +3 or 3 will set first line to line 3
+     e.g. +3 or 3 will set first line to line 3
          -3 on a 24 line screen will set first line to line 21
 
      If the resulting line is outside the bounds of the screen

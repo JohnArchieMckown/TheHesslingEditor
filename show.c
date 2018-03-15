@@ -111,6 +111,12 @@ static LINE *hexshow_curr=NULL; /* module global for historical reasons? */
 # define DEBUGDUMPDETAIL(x) {}
 #endif
 
+#ifdef DEBUG_SYNTAX_HIGHLIGHTING
+# define SHOW_HIGHLIGHTED_LINE(x,y,z) show_highlighted_line(x,y,z)
+#else
+# define SHOW_HIGHLIGHTED_LINE(x,y,z) {}
+#endif
+
 /* Make a chtype value from a character and a colour. This may be wrong if
  * the format of the chtype is incompatible. Please check this first if
  * you get strange results with your curses implementation.
@@ -438,14 +444,13 @@ else \
 # define REXX_INT_CHAR         ' '
 #endif
 
-/* small helper routines *****************************************************/
 
-#if 0
-static void show_highlighted_line( SHOW_LINE *scurr, char *msg )
+#ifdef DEBUG_SYNTAX_HIGHLIGHTING
+static void show_highlighted_line( int lineno, SHOW_LINE *scurr, char *msg )
 {
    int i;
    fprintf(stderr,"=====================================================\n" );
-   fprintf(stderr, "%s %d: %s\n",__FILE__,__LINE__,msg );
+   fprintf(stderr, "%s %d: %s\n",__FILE__,lineno,msg );
 
    if ( scurr )
    {
@@ -466,7 +471,7 @@ static void show_highlighted_line( SHOW_LINE *scurr, char *msg )
       {
          if ( scurr->contents )
          {
-            fprintf(stderr,"Row: %2.2d:%s\n        ",i,scurr->contents);
+            fprintf(stderr,"Row: %3.3d:%.*s\n      ==>",i,scurr->length,scurr->contents);
             fwrite( scurr->highlight_type, sizeof(char), scurr->length, stderr );
             fprintf( stderr, "\n" );
          }
@@ -475,6 +480,8 @@ static void show_highlighted_line( SHOW_LINE *scurr, char *msg )
    }
 }
 #endif
+
+/* small helper routines *****************************************************/
 
 /***********************************************************************/
 #ifdef HAVE_PROTO
@@ -822,7 +829,10 @@ void show_statarea()
 /***********************************************************************/
 {
    short y=0,x=0;
-   int key=0,charpos;
+#ifdef USE_UTF8
+   int charpos;
+#endif
+   int key=0;
    time_t timer;
    struct tm *tblock=NULL;
    int length;
@@ -1299,13 +1309,9 @@ CHARTYPE scrno;
    &&  SCREEN_FILE(scrno)->parser->have_paired_comments
    &&  SCREEN_VIEW(scrno)->syntax_headers & HEADER_COMMENT )
    {
-      /*
-      show_highlighted_line( NULL, "Before paired comments" );
-      */
+      SHOW_HIGHLIGHTED_LINE( __LINE__, NULL, "Before paired comments" );
       parse_paired_comments(scrno,SCREEN_FILE(scrno));
-      /*
-      show_highlighted_line( NULL, "After paired comments" );
-      */
+      SHOW_HIGHLIGHTED_LINE( __LINE__, NULL, "After paired comments" );
    }
 
    show_lines(scrno);
@@ -2262,9 +2268,7 @@ short rows,start_row;
       {
          parse_line(scrno,SCREEN_FILE(scrno),scurr,start_row); /* test for error return */
          scurr->is_highlighting = TRUE;
-         /*
-         show_highlighted_line( scurr, "Line parsing" );
-         */
+         SHOW_HIGHLIGHTED_LINE( __LINE__, scurr, "Line parsing" );
       }
       start_row += direction;
       scurr += direction;

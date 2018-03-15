@@ -191,6 +191,9 @@
 #undef HAVE_ACL_GET
 
 /* Define if you have this function */
+#undef HAVE_FORK
+
+/* Define if you have this function */
 #undef HAVE_GETACL
 
 /* Define if you have this function */

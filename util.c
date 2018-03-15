@@ -438,7 +438,7 @@ SYNOPSIS
 DESCRIPTION
      The memrmdup function removes all duplicate, contiguous characters
      from the supplied buffer.
-     eg. memrmdup("abc$$$def$$ghi$",15,'$')
+     e.g. memrmdup("abc$$$def$$ghi$",15,'$')
      will return pointer to buf equal to "abc$def$ghi$" and new length
      in len.
 
@@ -493,7 +493,7 @@ DESCRIPTION
      The strrmdup function removes all duplicate, contiguous characters
      from the supplied string.  if exclude_leading is TRUE, no removal
      is done of leading characters.
-     eg. strrmdup("abc$$$def$$ghi$",'$')
+     e.g. strrmdup("abc$$$def$$ghi$",'$')
      will return pointer to buf equal to "abc$def$ghi$".
 
 RETURN VALUE

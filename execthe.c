@@ -42,8 +42,13 @@
 # define THE_GUI_EXE     "theg.exe"
 # define THE_PATH_SEP '\\'
 #else
-# define THE_CONSOLE_EXE "nthe"
-# define THE_GUI_EXE     "xthe"
+# ifdef USE_UTF8
+#  define THE_CONSOLE_EXE "nwthe"
+#  define THE_GUI_EXE     "xwthe"
+# else
+#  define THE_CONSOLE_EXE "nthe"
+#  define THE_GUI_EXE     "xthe"
+# endif
 # define THE_PATH_SEP '/'
 #endif
 
@@ -404,6 +409,10 @@ int main( int argc, char *argv[] )
    char buf[1024];
    char *app;
 #endif
+#ifdef HAVE_FORK
+   int pid;
+#endif
+
 
    /* get our home directory */
    home = GetHomeDirectory();
@@ -562,6 +571,21 @@ int main( int argc, char *argv[] )
       /* now run our actual executable if we have found one */
       if ( override_default == THE_GUI )
       {
+#ifdef HAVE_FORK
+         pid = fork();
+         if (pid < 0)
+         {
+            /* Could not fork */
+            fprintf( stderr, "Unable to create child process\n" );
+            exit(1);
+         }
+         else if (pid > 0)
+         {
+            /* Child created ok, so exit parent process */
+            exit(0);
+         }
+         /* child continues */
+#endif
          prog[path_len] = '\0';
          strcat( prog, THE_GUI_EXE );
          my_argv[0] = prog;

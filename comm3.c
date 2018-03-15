@@ -981,7 +981,7 @@ DESCRIPTION
      the original file.
 
      The first form of the MOVE command, moves the portion of the file
-     specified by 'target1' to the line spcified by 'target2' in the
+     specified by 'target1' to the line specified by 'target2' in the
      same file.
 
      The second form of the MOVE command moves the contents of the marked

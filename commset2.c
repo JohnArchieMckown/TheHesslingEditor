@@ -154,13 +154,14 @@ CHARTYPE *params;
       /*
        * Use one of the builtin parsers
        */
-      buffer = find_default_parser(word[1],tldname);
+      buffer = find_default_parser( word[1] );
       if (buffer == NULL)
       {
          display_error(199,word[1],FALSE);
          TRACE_RETURN();
          return(RC_INVALID_OPERAND);
       }
+      tldname = word[1];
       num = strlen((DEFCHAR *)buffer);
       free_buffer = FALSE;
    }
@@ -442,11 +443,11 @@ SYNTAX
      [SET] Point .name [OFF]
 
 DESCRIPTION
-     The SET POINT command assignes the specified name to the
+     The SET POINT command assigns the specified name to the
      <focus line>, or removes the name from the line with the specified
      name.
      A valid line name must start with a '.' followed by alphanumeric
-     characters. eg. .a .fred and .3AB are valid names.
+     characters. e.g. .a .fred and .3AB are valid names.
 
      When a line is moved within the same file, its line name stays
      with the line.
@@ -842,7 +843,7 @@ DESCRIPTION
      ORIENTation Portrait|Landscape
      FONT fontname                   (name of fixed width font)
 
-     No checking is done for printer options. ie. You may specify a
+     No checking is done for printer options. i.e. You may specify a
      font that THE doesn't know about, and the printing process may
      not work after that.
 
@@ -859,7 +860,7 @@ DESCRIPTION
 
 COMPATIBILITY
      XEDIT: N/A
-     KEDIT: Compatible. THE adds more funtionality.
+     KEDIT: Compatible. THE adds more functionality.
 
 DEFAULT
      LPT1 - DOS/OS2, lpr - Unix, default - Win32
@@ -1274,7 +1275,7 @@ SYNTAX
 
 DESCRIPTION
      The SET REPROFILE command allows the user to determine if the
-     <profile> file is to reexecuted for files subsequenlty edited.
+     <profile> file is to reexecuted for files subsequently edited.
 
 COMPATIBILITY
      XEDIT: N/A
@@ -1698,7 +1699,7 @@ DESCRIPTION
      this sets the <scale line> to be relative to the middle of
      the screen. A positive value adds to the middle line number,
      a negative subtracts from it.
-     eg. M+3 on a 24 line screen will be line 15
+     e.g. M+3 on a 24 line screen will be line 15
          M-5 on a 24 line screen will be line 7
 
      The second form of parameters is:
@@ -1707,7 +1708,7 @@ DESCRIPTION
      this sets the <scale line> to be relative to the top of the
      screen (if positive or no sign) or relative to the bottom
      of the screen if negative.
-     eg. +3 or 3 will set current line to line 3
+     e.g. +3 or 3 will set current line to line 3
          -3 on a 24 line screen will be line 21
 
      If the resulting line is outside the bounds of the screen
@@ -3382,7 +3383,7 @@ DESCRIPTION
      this sets the <tab line> to be relative to the middle of
      the screen. A positive value adds to the middle line number,
      a negative subtracts from it.
-     eg. M+3 on a 24 line screen will be line 15
+     e.g. M+3 on a 24 line screen will be line 15
          M-5 on a 24 line screen will be line 7
 
      The second form of parameters is:
@@ -3391,7 +3392,7 @@ DESCRIPTION
      this sets the <tab line> to be relative to the top of the
      screen (if positive or no sign) or relative to the bottom
      of the screen if negative.
-     eg. +3 or 3 will set current line to line 3
+     e.g. +3 or 3 will set current line to line 3
          -3 on a 24 line screen will be line 21
 
      If the resulting line is outside the bounds of the screen
@@ -3944,11 +3945,11 @@ DESCRIPTION
      any already saved target.
 
      Any combination of the target types, STRING, REGEXP, ABSOLUTE, RELATIVE,
-     POINT, or BLANK can be supplied. eg. SET TARGETSAVE STRING POINT.
+     POINT, or BLANK can be supplied. e.g. SET TARGETSAVE STRING POINT.
 
      As an example, having SET TARGETTYPE STRING then the only target saved
      will be one that has a string target component.
-     ie. if you executed LOCATE /fred/ then LOCATE :3 then LOCATE, the final
+     i.e. if you executed LOCATE /fred/ then LOCATE :3 then LOCATE, the final
      LOCATE will look for /fred/ NOT :3
 
 COMPATIBILITY
@@ -4892,7 +4893,7 @@ SYNTAX
 
 DESCRIPTION
      The SET XTERMINAL set command allows the user to specify the full
-     quallified file name of the program to run when the <OS>, <DOS> or <!>
+     qualified file name of the program to run when the <OS>, <DOS> or <!>
      command is entered without parameters when running the X version
      of THE.
 
