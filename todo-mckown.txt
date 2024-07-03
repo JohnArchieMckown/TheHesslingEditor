@@ -1,2 +1,2 @@
 Why are non-executable regular files marked executable
-implement line commands (right)
+implement line commands in the "prefix area"
